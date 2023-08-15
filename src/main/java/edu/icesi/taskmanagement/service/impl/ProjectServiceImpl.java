@@ -3,9 +3,11 @@ package edu.icesi.taskmanagement.service.impl;
 import edu.icesi.taskmanagement.persistence.models.Project;
 import edu.icesi.taskmanagement.persistence.repository.IProjectRepository;
 import edu.icesi.taskmanagement.service.IProjectService;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class ProjectServiceImpl implements IProjectService {
     private IProjectRepository projectRepository;
 
