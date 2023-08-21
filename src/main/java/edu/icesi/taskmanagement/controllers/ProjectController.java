@@ -38,7 +38,7 @@ public class ProjectController {
 
     @PostMapping("")
     public Project create(@RequestBody Project newProject) {
-        LOG.info("Project: ", newProject);
+        LOG.info("Project:  {}", newProject);
         return this.projectService.save(newProject);
 
     }
