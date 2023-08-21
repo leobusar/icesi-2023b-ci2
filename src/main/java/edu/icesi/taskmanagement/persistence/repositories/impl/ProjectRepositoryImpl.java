@@ -1,12 +1,9 @@
-package edu.icesi.taskmanagement.persistence.repository.impl;
+package edu.icesi.taskmanagement.persistence.repositories.impl;
 
 import edu.icesi.taskmanagement.persistence.models.Project;
-import edu.icesi.taskmanagement.persistence.repository.IProjectRepository;
-import jakarta.annotation.PostConstruct;
-import org.springframework.stereotype.Component;
+import edu.icesi.taskmanagement.persistence.repositories.IProjectRepository;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -15,9 +12,6 @@ import java.util.Optional;
 public class ProjectRepositoryImpl implements IProjectRepository {
     List <Project> projects = new ArrayList<>();
 
-    public ProjectRepositoryImpl() {
-        super();
-    }
 
 //    @PostConstruct
 //    public void setup() {

@@ -1,15 +1,16 @@
-package edu.icesi.taskmanagement.service.impl;
+package edu.icesi.taskmanagement.services.impl;
 
 import edu.icesi.taskmanagement.persistence.models.Project;
-import edu.icesi.taskmanagement.persistence.repository.IProjectRepository;
-import edu.icesi.taskmanagement.service.IProjectService;
+import edu.icesi.taskmanagement.persistence.repositories.IProjectRepository;
+import edu.icesi.taskmanagement.services.IProjectService;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
 public class ProjectServiceImpl implements IProjectService {
-    private IProjectRepository projectRepository;
+
+    private final IProjectRepository projectRepository;
 
     public ProjectServiceImpl(IProjectRepository projectRepository) {
         this.projectRepository = projectRepository;
@@ -24,4 +25,5 @@ public class ProjectServiceImpl implements IProjectService {
     public Project save(Project project) {
         return projectRepository.save(project);
     }
+
 }

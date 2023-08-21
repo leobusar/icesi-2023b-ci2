@@ -2,7 +2,7 @@ package edu.icesi.taskmanagement.persistence.models;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.util.Objects;
+
 @AllArgsConstructor
 @Data
 
