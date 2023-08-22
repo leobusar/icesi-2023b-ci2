@@ -19,8 +19,8 @@ public class TaskManagement3Application {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext("edu.icesi.taskmanagement.configuration");
 
 //		IProjectRepository projectRepository = ctx.getBean("projectRepositoryImpl", IProjectRepository.class);
-		displayAllBeans(ctx);
-		ctx.close();
+		//displayAllBeans(ctx);
+		//ctx.close();
 
 	}
 
