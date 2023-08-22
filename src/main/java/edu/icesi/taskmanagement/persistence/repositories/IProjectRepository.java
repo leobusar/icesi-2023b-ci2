@@ -1,4 +1,4 @@
-package edu.icesi.taskmanagement.persistence.repository;
+package edu.icesi.taskmanagement.persistence.repositories;
 import  java.util.Optional;
 import edu.icesi.taskmanagement.persistence.models.Project;
 

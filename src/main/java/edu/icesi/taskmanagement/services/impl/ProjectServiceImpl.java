@@ -1,9 +1,9 @@
-package edu.icesi.taskmanagement.service.impl;
+package edu.icesi.taskmanagement.services.impl;
 
 import edu.icesi.taskmanagement.persistence.models.BeanA;
 import edu.icesi.taskmanagement.persistence.models.Project;
-import edu.icesi.taskmanagement.persistence.repository.IProjectRepository;
-import edu.icesi.taskmanagement.service.IProjectService;
+import edu.icesi.taskmanagement.persistence.repositories.IProjectRepository;
+import edu.icesi.taskmanagement.services.IProjectService;
 import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

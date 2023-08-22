@@ -1,4 +1,4 @@
-package edu.icesi.taskmanagement.service;
+package edu.icesi.taskmanagement.services;
 
 import edu.icesi.taskmanagement.persistence.models.Project;
 
