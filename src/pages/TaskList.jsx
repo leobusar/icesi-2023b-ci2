@@ -1,21 +1,23 @@
-import React from 'react'
-import taskList from  '../data/todos.json'
+import React, {useState} from 'react'
+import tasks from  '../data/todos.json'
 import TaskTable from '../components/TaskTable'
+import TaskForm from '../components/TaskForm'
 
 function TaskList({owner}) {
 
-  const  renderTasks = () => {
-    return  taskList.map((task)=>
-
-         (<li key={task.id}>
-            {task.title}
-        </li>)
-    )
+  const [taskList, setTaskList] = useState(tasks) 
+  const addTask = (task) => {
+    task.id= Math.floor(Math.random()*100000)
+    console.log(task)
+    let taskTmp = [...taskList]
+    taskTmp.push(task)
+    setTaskList(taskTmp)
   }
-  console.log(taskList)  
+
   return (
     <div>{owner}'s TaskList
-        <TaskTable taskList={taskList}/>
+      <TaskForm addTask={addTask}/>
+      <TaskTable taskList={taskList}/>
     </div>
   )
 }
