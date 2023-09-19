@@ -16,14 +16,18 @@ public class ProjectController {
 
     public ProjectController(IProjectService projectService) {
         this.projectService = projectService;
+        projectService.save(new Project(1L,"My Project", LocalDate.now()));
+        projectService.save(new Project(2L,"My Project 2", LocalDate.now()));
+        projectService.save(new Project(3L,"My Project 3", LocalDate.now()));
+
     }
 
     @GetMapping("/{id}")
     public String findOne(Model model, @PathVariable Long id){
-        this.projectService.save(new Project(1L,"My Project", LocalDate.now()));
         if(this.projectService.findById(id).isPresent()) {
-            model.addAttribute(this.projectService.findById(id).get());
-            return "projects/index";
+            Project project = this.projectService.findById(id).get();
+            model.addAttribute(project);
+            return "projects/detail";
         }
         throw new ResponseStatusException(
                 HttpStatus.NOT_FOUND, "entity not found"

@@ -1,6 +1,7 @@
 package edu.icesi.taskmanagement;
 
 import edu.icesi.taskmanagement.persistence.repositories.IProjectRepository;
+import edu.icesi.taskmanagement.services.IProjectService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
