@@ -28,6 +28,7 @@ public class TaskManagement3Application {
 		String[] allBeanNames = ctx.getBeanDefinitionNames();
 		for(String beanName : allBeanNames) {
 			System.out.println(beanName);
+			System.out.println();
 		}
 	}
 
