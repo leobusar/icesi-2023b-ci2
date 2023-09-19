@@ -11,13 +11,23 @@
 <body>
 <div class="container">
     <div th:replace="~{fragments/menu :: menu}">&nbsp;</div>
-    <h1>Create Project</h1>
+    <h1 th:if="${project == null}">Create Project</h1>
+    <h1 th:unless="${project == null}">Edit Project</h1>
+
     <form method="POST" th:action="@{/project}" th:object="${newProject}">
-        <span>Id:</span>
-        <input type="text" name="id"/>
-        <span>Nombre:</span>
-        <input type="text" name="name"/>
-        <input type="text" name="dateCreated"/>
+
+        <div>
+            <span>Id:</span>
+            <input  class="form-control" type="text" name="id" th:value="${project != null} ? ${project.id}:''"/>
+        </div>
+        <div>
+            <span>Name:</span>
+            <input  class="form-control" type="text" name="name" th:value="${project != null} ? ${project.name}:''"/>
+        </div>
+        <div>
+            <span>Date:</span>
+            <input  class="form-control" type="date" name="dateCreated" th:value="${project != null} ? ${project.dateCreated}:''"/>
+        </div>
         <input type="submit" value="Enviar">
     </form>
     <div th:replace="~{fragments/menu :: javascript}">&nbsp;</div>

@@ -3,6 +3,8 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.util.Objects;
+
+@NoArgsConstructor
 @AllArgsConstructor
 @Data
 public class Project {

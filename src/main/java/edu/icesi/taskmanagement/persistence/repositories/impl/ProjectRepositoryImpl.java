@@ -27,6 +27,10 @@ public class ProjectRepositoryImpl implements IProjectRepository {
      return projects.stream().filter(p->p.getId() == id).findFirst();
     }
 
+
+    public List<Project> getAll(){
+        return projects;
+    }
     @Override
     public Project save(Project project) {
         Project existingProject = findById(project.getId()).orElse(null);

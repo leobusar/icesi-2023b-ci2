@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -28,6 +29,8 @@ public class ProjectServiceImpl implements IProjectService {
         return projectRepository.findById(id);
     }
 
+    @Override
+    public List<Project> getAll(){return projectRepository.getAll();}
     @Override
     public Project save(Project project) {
         return projectRepository.save(project);
