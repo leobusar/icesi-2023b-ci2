@@ -2,12 +2,12 @@ import { TableContainer, TableRow, TableHead, Table,  TableCell, TableBody, Pape
 import PropTypes from 'prop-types'
 import TaskRow from './TaskRow'
 
-function  TaskTable ({taskList}) {
+function  TaskTable ({taskList, delTask, editTask}) {
 
   const  renderTasks = () => {
     return  taskList.map((task)=>
 
-         (<TaskRow key={task.id} task={task}/>)
+         (<TaskRow key={task.id} task={task} delTask={delTask} editTask={editTask}/>)
     )
   }
   return (
@@ -19,6 +19,7 @@ function  TaskTable ({taskList}) {
           <TableCell align="right">Id</TableCell>
           <TableCell align="left">Title</TableCell>
           <TableCell align="left">Completed</TableCell>
+          <TableCell align="left">Actions</TableCell>
 
         </TableRow>
       </TableHead>
@@ -32,7 +33,9 @@ function  TaskTable ({taskList}) {
 
 
 TaskTable.propTypes = {
-  taskList: PropTypes.array
+  taskList: PropTypes.array,
+  delTask: PropTypes.func,
+  editTask: PropTypes.func
 }
 
 export default TaskTable
