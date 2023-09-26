@@ -16,7 +16,7 @@ function TaskForm({addTask, taskEdit}) {
       //console.log(taskEdit)
     }, [taskEdit])
 
-    const handleClick = (e)=>{
+    const handleClick = ()=>{
         //e.preventDefault()
         addTask({id,title, userId, completed})
     }

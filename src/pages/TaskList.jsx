@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import tasks from  '../data/todos.json'
 import TaskTable from '../components/TaskTable'
 import TaskForm from '../components/TaskForm'
@@ -32,7 +32,7 @@ function TaskList({owner}) {
   }
 
   return (
-    <div>{owner}'s TaskList
+    <div>{owner}s TaskList
       <TaskForm addTask={addTask} taskEdit={taskEdit}/>
       <TaskTable taskList={taskList} delTask={delTask} editTask={setTaskEdit}/>
     </div>
