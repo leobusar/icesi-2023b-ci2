@@ -4,6 +4,7 @@ import axios from  '../config/axios'
 import TaskTable from '../components/TaskTable'
 import TaskForm from '../components/TaskForm'
 import PropTypes from 'prop-types'
+import { TaskContext } from '../context/TaskContext'
 
 function TaskList({owner}) {
 
@@ -72,10 +73,12 @@ function TaskList({owner}) {
   }
 
   return (
-    <div>{owner}s TaskList
+    <TaskContext.Provider value={{taskEdit, setTaskEdit}}>
+      
+      {owner}s TaskList
       <TaskForm addTask={addTask} taskEdit={taskEdit}/>
       <TaskTable taskList={taskList} delTask={delTask} editTask={setTaskEdit}/>
-    </div>
+    </TaskContext.Provider>
   )
 }
 

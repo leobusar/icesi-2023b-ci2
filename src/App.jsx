@@ -1,14 +1,11 @@
 import { useState } from 'react'
 import './App.css'
-import TaskList from './pages/TaskList'
+import  Router  from  './routes'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-    <TaskList  owner="Leonardo" />
-    </>
+    <Router />
   )
 }
 
