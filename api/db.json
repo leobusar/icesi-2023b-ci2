@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": 11,
+      "title": "Hacer quiz el martes",
+      "userId": 2,
+      "completed": false
+    },
+    {
+      "userId": 2,
+      "id": 12,
+      "title": "ipsa repellendus fugit nisi",
+      "completed": true
+    },
+    {
+      "id": 89812,
+      "title": "Cualquiera",
+      "userId": "1",
+      "completed": true
+    },
+    {
+      "id": 12994,
+      "title": "otro",
+      "userId": "1",
+      "completed": true
+    }
+  ]
+}
