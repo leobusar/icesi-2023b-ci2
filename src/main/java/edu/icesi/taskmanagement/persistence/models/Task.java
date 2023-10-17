@@ -14,23 +14,23 @@ public class Task {
     private LocalDate dateCreated;
     private LocalDate dueDate;
     private String status;
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = true)
     private Project project;
     public Task() {
 
     }
 
-    public Task(String name, String description, LocalDate dateCreated, LocalDate dueDate, Project project) {
+    public Task(String name, String description, LocalDate dateCreated, LocalDate dueDate) {
         this.name = name;
         this.description = description;
         this.dateCreated = dateCreated;
         this.dueDate = dueDate;
         this.status = "ToDo";
-        this.project = project;
+        //this.project = project;
     }
 
     public Task(Task task) {
-        this(task.getName(), task.getDescription(), task.getDateCreated(), task.getDueDate(), task.getProject());
+        this(task.getName(), task.getDescription(), task.getDateCreated(), task.getDueDate());
     }
 
     public Long getId() {
