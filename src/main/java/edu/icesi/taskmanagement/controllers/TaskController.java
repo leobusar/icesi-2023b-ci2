@@ -2,6 +2,7 @@ package edu.icesi.taskmanagement.controllers;
 
 import edu.icesi.taskmanagement.persistence.models.Task;
 import edu.icesi.taskmanagement.services.ITaskService;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -16,8 +17,8 @@ public class TaskController {
     }
 
     @GetMapping("")
-    public Iterable<Task> findAll() {
-        return this.taskService.findAll();
+    public Iterable<Task> findAll(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size, @RequestParam(required=false) String sort, @RequestParam(defaultValue="asc") String order) {
+        return this.taskService.findAll(page, size, sort, order);
     }
 
     @GetMapping("/{id}")

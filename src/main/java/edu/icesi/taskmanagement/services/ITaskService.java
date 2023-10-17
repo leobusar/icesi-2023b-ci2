@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface ITaskService {
     Optional<Task> findById(Long id);
-    Iterable<Task> findAll();
+    Iterable<Task> findAll(int page,int size,String sort, String order);
 
     Task save(Task Task);
 }
