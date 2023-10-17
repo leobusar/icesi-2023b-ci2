@@ -3,7 +3,6 @@ package edu.icesi.taskmanagement.configurations;
 import edu.icesi.taskmanagement.persistence.models.BeanA;
 import edu.icesi.taskmanagement.persistence.models.BeanB;
 import edu.icesi.taskmanagement.persistence.models.BeanC;
-import edu.icesi.taskmanagement.persistence.repositories.impl.ProjectRepositoryImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

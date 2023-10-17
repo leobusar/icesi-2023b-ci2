@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @RestController
 @RequestMapping("/project")
@@ -18,6 +19,11 @@ public class ProjectController {
         this.projectService = projectService;
     }
 
+    @GetMapping("")
+    public Iterable<Project> findAll() {
+        return this.projectService.findAll();
+    }
+
     @GetMapping("/{id}")
     public Project findOne(@PathVariable Long id){
         if(this.projectService.findById(id).isPresent())
@@ -27,6 +33,14 @@ public class ProjectController {
         );
     }
 
+    @GetMapping("/name/{name}")
+    public Project findByName(@PathVariable String name){
+        if(this.projectService.findByName(name).isPresent())
+            return  this.projectService.findByName(name).get();
+        throw new ResponseStatusException(
+                HttpStatus.NOT_FOUND, "entity not found"
+        );
+    }
     @PostMapping
     public Project create(@RequestBody Project newProject){
         return this.projectService.save(newProject);

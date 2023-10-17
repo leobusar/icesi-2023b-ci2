@@ -27,7 +27,16 @@ public class ProjectServiceImpl implements IProjectService {
     public Optional<Project> findById(Long id) {
         return projectRepository.findById(id);
     }
+    public Optional<Project> findByName(String name) {
 
+        return projectRepository.findByName(name);
+    }
+
+
+    @Override
+    public Iterable<Project> findAll(){
+        return projectRepository.findAll();
+    }
     @Override
     public Project save(Project project) {
         return projectRepository.save(project);
